@@ -1,0 +1,1007 @@
+/* Reseteo general */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  color-scheme: light;
+
+  --header-bg: #1f2937;
+  --header-text: #ffffff;
+  --header-subtitle: #9ca3af;
+  --header-button-text: #ffffff;
+
+  --footer-bg: #eeeeee;
+  --footer-text: #525252;
+  --footer-link: #262626;
+  --footer-border: #d4d4d4;
+
+  --color-button: #374151;
+  --color-button-hover: #1f2937;
+
+  --control-border: #fcfbfb;
+  --control-border-hover: #28d63d;
+
+  --page-bg: #f8fafc;
+  --text-primary: #333333;
+  --surface-bg: #ffffff;
+  --surface-border: #e2e8f0;
+  --heading-color: #1f2937;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --input-bg: #f8fafc;
+  --input-border: #cbd5e1;
+  --input-focus-border: #6b7280;
+  --input-focus-shadow: rgba(107, 114, 128, 0.15);
+  --focus-outline: #94a3b8;
+  --panel-divider: #f1f5f9;
+  --panel-tabs-bg: #f1f5f9;
+  --panel-tab-text: #404040;
+  --panel-tab-hover: #e5e7eb;
+  --favorite-card-border: #e5e5e5;
+  --favorite-card-bg: #ffffff;
+  --favorite-count-bg: #e5e5e5;
+  --favorite-count-text: #404040;
+  --favorite-magnitude-text: #262626;
+  --favorite-location-text: #404040;
+  --favorite-date-text: #737373;
+  --favorite-divider: #e5e5e5;
+  --favorite-map-border: #d4d4d4;
+  --favorite-map-bg: #f5f5f5;
+  --favorite-map-text: #404040;
+  --favorite-map-hover-bg: #e5e5e5;
+  --favorite-map-hover-border: #a3a3a3;
+  --favorite-delete-border: #fecaca;
+  --favorite-delete-bg: #fef2f2;
+  --favorite-delete-text: #dc2626;
+  --favorite-delete-hover-bg: #fee2e2;
+  --favorite-delete-hover-border: #fca5a5;
+  --map-bg: #e2e8f0;
+  --leaflet-attribution-text: #64748b;
+  --footer-link-hover: #000000;
+  --tooltip-border: #444444;
+  --tooltip-bg: #252525;
+  --tooltip-text: #ffffff;
+  --loading-border: rgba(156, 163, 175, 0.35);
+  --loading-indicator: #374151;
+  --loading-overlay: rgba(75, 75, 75, 0.45);
+
+  --theme-icon-active: #1f2937;
+  --theme-icon-inactive: #9ca3af;
+  --theme-indicator-bg: #d1d5db;
+}
+
+html.dark-mode {
+  color-scheme: dark;
+
+  --header-bg: #1f2937;
+  --header-text: #f1f5f9;
+  --header-subtitle: #94a3b8;
+  --header-button-text: #f1f5f9;
+
+  --footer-bg: #1e293b;
+  --footer-text: #cbd5e1;
+  --footer-link: #e2e8f0;
+  --footer-border: #334155;
+
+  --color-button: #334155;
+  --color-button-hover: #475569;
+
+  --control-border: #afafaf;
+  --control-border-hover: #28d63d;
+
+  --page-bg: #1f2228;
+  --text-primary: #f1f5f9;
+  --surface-bg: #1e293b;
+  --surface-border: #334155;
+  --heading-color: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --input-bg: #0f172a;
+  --input-border: #475569;
+  --input-focus-border: #94a3b8;
+  --input-focus-shadow: rgba(148, 163, 184, 0.2);
+  --focus-outline: #94a3b8;
+
+  --panel-divider: #334155;
+  --panel-tabs-bg: #0f172a;
+  --panel-tab-text: #cbd5e1;
+  --panel-tab-hover: #334155;
+
+  --favorite-card-bg: #27364b;
+  --favorite-card-border: #475569;
+  --favorite-count-bg: #334155;
+  --favorite-count-text: #e2e8f0;
+  --favorite-magnitude-text: #f1f5f9;
+  --favorite-location-text: #cbd5e1;
+  --favorite-date-text: #94a3b8;
+  --favorite-divider: #334155;
+
+  --favorite-map-border: #475569;
+  --favorite-map-bg: #334155;
+  --favorite-map-text: #e2e8f0;
+  --favorite-map-hover-bg: #475569;
+  --favorite-map-hover-border: #64748b;
+
+  --favorite-delete-border: #7f1d1d;
+  --favorite-delete-bg: #450a0a;
+  --favorite-delete-text: #fca5a5;
+  --favorite-delete-hover-bg: #7f1d1d;
+  --favorite-delete-hover-border: #991b1b;
+
+  --map-bg: #1e293b;
+  --leaflet-attribution-text: #cbd5e1;
+
+  --footer-link-hover: #ffffff;
+
+  --tooltip-border: #475569;
+  --tooltip-bg: #1e293b;
+  --tooltip-text: #f1f5f9;
+
+  --loading-border: rgba(148, 163, 184, 0.25);
+  --loading-indicator: #cbd5e1;
+  --loading-overlay: rgba(15, 23, 42, 0.65);
+
+  --theme-icon-active: #1f2937;
+  --theme-icon-inactive: #cbd5e1;
+  --theme-indicator-bg: #475569;
+}
+
+html.dark-mode .theme-toggle-indicator {
+  transform: translateX(30px);
+}
+
+html.dark-mode #theme-toggle .sun-icon {
+  color: var(--theme-icon-inactive);
+}
+
+html.dark-mode #theme-toggle .moon-icon {
+  color: var(--theme-icon-active);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  color: var(--text-primary);
+}
+
+/* El body ahora es una columna: Header arriba, y el contenido (filtros + mapas) abajo */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--page-bg);
+}
+
+/* ==================================================== */
+/*                    Style del header                  */
+/* ==================================================== */
+
+.main-header {
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--header-text);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  color: var(--header-subtitle);
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+#theme-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 64px;
+  height: 33px;
+  padding: 0 8px;
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  background-color: var(--surface-bg);
+  color: var(--header-text);
+  cursor: pointer;
+}
+
+#theme-toggle svg {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+#theme-toggle .sun-icon,
+#theme-toggle .moon-icon {
+  color: var(--theme-icon-inactive);
+  transition: color 0.25s ease;
+}
+
+#theme-toggle .sun-icon {
+  color: var(--theme-icon-active);
+}
+
+.theme-toggle-indicator {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--theme-indicator-bg);
+  transition: transform 0.25s ease;
+}
+
+#auth-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#auth-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 2px solid var(--control-border);
+  border-radius: 8px;
+  background-color: var(--color-button-hover);
+  color: var(--header-button-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+#auth-container a:hover {
+  background-color: var(--color-button);
+  border-color: var(--control-border-hover);
+}
+
+#auth-container span {
+  position: relative;
+  top: -5px;
+}
+
+.user-icon {
+  position: relative;
+  top: 6px;
+}
+
+#logout-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 2px solid var(--control-border);
+  border-radius: 8px;
+  background-color: var(--header-bg);
+  color: var(--header-button-text);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+#logout-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+#logout-button:hover {
+  background-color: var(--color-button);
+  border-color: var(--control-border-hover);
+}
+
+#logout-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border: 1px solid var(--tooltip-border);
+  border-radius: 6px;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 1000;
+}
+
+#logout-button:hover::after,
+#logout-button:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+/* ==================================================== */
+
+.main-content {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* --- Panel de Filtros y favs --- */
+#filters-panel,
+#favorites-panel {
+  flex: 1;
+  min-height: 0;
+}
+
+#filters-panel[hidden],
+#favorites-panel[hidden] {
+  display: none;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 0 0 22%;
+  height: 100%;
+  background-color: var(--surface-bg);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.05),
+    0 2px 4px -2px rgb(0 0 0 / 0.05);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.filter-box h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  border-bottom: 2px solid var(--panel-divider);
+  padding-bottom: 10px;
+}
+
+.mag-filter,
+.date-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date-filter {
+  margin-top: 20px;
+}
+
+.filter-box h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.filter-box label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.filter-box input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.filter-box input:focus {
+  border-color: var(--input-focus-border);
+  background-color: var(--surface-bg);
+  box-shadow: 0 0 0 3px var(--input-focus-shadow);
+}
+
+/* --- Aviso de favoritos bloqueados --- */
+#favorites-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 12px;
+  text-align: center;
+}
+
+#favorites-empty[hidden] {
+  display: none;
+}
+
+.favorites-locked-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--favorite-magnitude-text);
+}
+
+.favorites-locked-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#favorites-empty p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.favorites-access-button {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid var(--tooltip-border);
+  border-radius: 8px;
+  background-color: var(--color-button);
+  color: var(--tooltip-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.favorites-access-button:hover {
+  background-color: var(--color-button-hover);
+}
+
+/* --- Pestañas del panel: Filtros y Favoritos --- */
+.panel-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background-color: var(--panel-tabs-bg);
+  border-radius: 8px;
+}
+
+.panel-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--panel-tab-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Pestaña seleccionada */
+.panel-tab.active {
+  background-color: var(--color-button);
+  color: var(--tooltip-text);
+}
+
+/* Efecto al pasar el ratón por la pestaña inactiva */
+.panel-tab:not(.active):hover {
+  background-color: var(--panel-tab-hover);
+}
+
+/* Indicador visible al navegar con el teclado */
+.panel-tab:focus-visible {
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* ==================================================== */
+/*            Style de la sección favoritos             */
+/* ==================================================== */
+
+/* Lista de favoritos */
+#favorites-list {
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#favorites-list::-webkit-scrollbar {
+  display: none;
+}
+
+#favorites-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tarjeta de favorito */
+.favorite-item {
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--favorite-card-border);
+  border-radius: 6px;
+  background-color: var(--favorite-card-bg);
+}
+
+/* Encabezado de favoritos */
+.favorites-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+#favorites-header[hidden] {
+  display: none;
+}
+
+.favorites-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Contador de favoritos */
+.favorites-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 50%;
+  background-color: var(--favorite-count-bg);
+  color: var(--favorite-count-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Encabezado de cada tarjeta */
+.favorite-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+/* Magnitud */
+.favorite-item-magnitude {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--favorite-magnitude-text);
+}
+
+/* Etiqueta de magnitud */
+.favorite-item-magtag {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #ffedd5;
+  color: #c2410c;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Ubicación del terremoto */
+.favorite-item-location {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--favorite-location-text);
+}
+
+/* Fecha del terremoto */
+.favorite-item-date {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--favorite-date-text);
+}
+
+/* Línea divisoria */
+.favorite-item-divider {
+  border: 0;
+  border-top: 1px solid var(--favorite-divider);
+  margin: 0 0 8px;
+}
+
+/* Pie de la tarjeta */
+.favorite-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Código del terremoto */
+.favorite-item-code {
+  font-size: 10px;
+  color: var(--favorite-date-text);
+  white-space: nowrap;
+}
+
+/* Contenedor de acciones */
+.favorite-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Botón para ver el terremoto en el mapa */
+.favorite-item-map {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: auto;
+  height: 20px;
+  padding: 3px;
+  border: 1px solid var(--favorite-map-border);
+  border-radius: 4px;
+  background-color: var(--favorite-map-bg);
+  color: var(--favorite-map-text);
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.favorite-item-map:hover {
+  background-color: var(--favorite-map-hover-bg);
+  border-color: var(--favorite-map-hover-border);
+}
+
+/* Botón para eliminar el favorito */
+.favorite-item-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--favorite-delete-border);
+  border-radius: 4px;
+  background-color: var(--favorite-delete-bg);
+  color: var(--favorite-delete-text);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.favorite-item-delete:hover {
+  background-color: var(--favorite-delete-hover-bg);
+  border-color: var(--favorite-delete-hover-border);
+}
+
+/* ==================================================== */
+
+/* --- Contenedor de Mapas --- */
+.filtered {
+  display: flex;
+  flex-direction: column;
+  height: 25rem;
+}
+
+.map-visualizer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  gap: 5px;
+}
+
+#map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--surface-border);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.05),
+    0 2px 4px -2px rgb(0 0 0 / 0.05);
+  background-color: var(--map-bg);
+}
+
+/* ==================================================== */
+/*             Style del Popup y botón Fav              */
+/* ==================================================== */
+.earthquake-popup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.earthquake-popup-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.favorite-button {
+  position: relative;
+  flex-shrink: 0;
+  padding: 2px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.favorite-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  border: 1px solid var(--tooltip-border);
+  border-radius: 6px;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+  z-index: 1000;
+}
+
+.favorite-button:hover::after,
+.favorite-button:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.favorite-button svg {
+  display: block;
+}
+
+/* ==================================================== */
+/*                     Info overlay                     */
+/* ==================================================== */
+.map-info-overlay {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  white-space: nowrap;
+  pointer-events: none; /* Permite hacer clic en el mapa a través del texto */
+
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--tooltip-text);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#close-info {
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto; /* Permite pulsar la X sin bloquear la interacción con el mapa */
+}
+
+#close-info:hover {
+  opacity: 0.7;
+}
+
+/* ==================================================== */
+/*                   Efecto "cargando"                  */
+/* ==================================================== */
+#loading {
+  display: none;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  border: 10px solid var(--loading-border);
+  border-top-color: var(--loading-indicator);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#map.loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--loading-overlay);
+  z-index: 1000;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ==================================================== */
+/*         Restyle de marca de agua de Leaflet          */
+/* ==================================================== */
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0) !important;
+  padding: 2px 6px !important;
+  font-size: 10px !important;
+  border-radius: 4px !important;
+  color: var(--leaflet-attribution-text) !important;
+}
+/* ==================================================== */
+
+/* Leaflet Zoom Controls */
+.leaflet-bar a {
+  background-color: var(--surface-bg);
+  color: var(--text-primary);
+  border-bottom-color: var(--surface-border);
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--panel-tab-hover);
+}
+
+/* ==================================================== */
+/*                    Style del footer                  */
+/* ==================================================== */
+
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+  color: var(--footer-text);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.main-footer a {
+  color: var(--footer-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.main-footer a:hover {
+  color: var(--footer-link-hover);
+}
+
+/* ==================================================== */
+/*                    Media Queries                     */
+/* ==================================================== */
+@media (max-width: 480px) {
+  .main-header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    gap: 10px;
+  }
+
+  .logo-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-footer {
+    padding: 10px 16px;
+    gap: 12px;
+    font-size: 11px;
+  }
+}
