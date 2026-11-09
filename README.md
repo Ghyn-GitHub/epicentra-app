@@ -1,4 +1,5 @@
 # Epicentra
+- [Epicentra APP (GitHub Pages)](https://ghyn-github.github.io/epicentra-app/)
 
 Epicentra es una aplicación web para explorar terremotos recientes en un mapa interactivo. Permite consultar la actividad sísmica publicada por el Servicio Geológico de Estados Unidos (USGS), filtrar los eventos por fecha y magnitud, y guardar terremotos como favoritos con una cuenta de usuario.
 
